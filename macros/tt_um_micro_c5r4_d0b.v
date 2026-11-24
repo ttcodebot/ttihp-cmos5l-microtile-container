@@ -1,10 +1,16 @@
-module tt_um_micro_proj2 (clk,
+module tt_um_micro_c5r4_d0b (clk,
     rst_n,
     ui_in,
+    uio_in,
+    uio_oe,
+    uio_out,
     uo_out);
  input clk;
  input rst_n;
  input [7:0] ui_in;
+ input [3:0] uio_in;
+ output [3:0] uio_oe;
+ output [3:0] uio_out;
  output [7:0] uo_out;
 
  wire _00_;
@@ -22,6 +28,10 @@ module tt_um_micro_proj2 (clk,
  wire _12_;
  wire _13_;
  wire _14_;
+ wire _15_;
+ wire _16_;
+ wire _17_;
+ wire _18_;
  wire clknet_0_clk;
  wire \cnt[0] ;
  wire \cnt[1] ;
@@ -41,10 +51,6 @@ module tt_um_micro_proj2 (clk,
  wire net7;
  wire net8;
  wire net9;
- wire net;
- wire clknet_1_0__leaf_clk;
- wire clknet_1_1__leaf_clk;
- wire net10;
  wire net11;
  wire net12;
  wire net13;
@@ -53,17 +59,31 @@ module tt_um_micro_proj2 (clk,
  wire net16;
  wire net17;
  wire net18;
+ wire net10;
+ wire net;
+ wire clknet_1_0__leaf_clk;
+ wire clknet_1_1__leaf_clk;
  wire net19;
  wire net20;
  wire net21;
  wire net22;
  wire net23;
  wire net24;
+ wire net25;
+ wire net26;
+ wire net27;
+ wire net28;
+ wire net29;
+ wire net30;
+ wire net31;
+ wire net32;
 
  sg13cmos5l_decap_8 FILLER_0_0 ();
+ sg13cmos5l_decap_8 FILLER_0_105 ();
+ sg13cmos5l_decap_8 FILLER_0_120 ();
  sg13cmos5l_decap_8 FILLER_0_14 ();
- sg13cmos5l_decap_8 FILLER_0_157 ();
- sg13cmos5l_decap_4 FILLER_0_164 ();
+ sg13cmos5l_decap_8 FILLER_0_160 ();
+ sg13cmos5l_fill_1 FILLER_0_167 ();
  sg13cmos5l_decap_8 FILLER_0_21 ();
  sg13cmos5l_decap_8 FILLER_0_28 ();
  sg13cmos5l_decap_8 FILLER_0_35 ();
@@ -78,12 +98,10 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_0_91 ();
  sg13cmos5l_decap_8 FILLER_0_98 ();
  sg13cmos5l_decap_8 FILLER_10_0 ();
- sg13cmos5l_fill_2 FILLER_10_105 ();
- sg13cmos5l_fill_1 FILLER_10_107 ();
- sg13cmos5l_fill_2 FILLER_10_117 ();
  sg13cmos5l_decap_8 FILLER_10_14 ();
- sg13cmos5l_decap_8 FILLER_10_157 ();
- sg13cmos5l_decap_4 FILLER_10_164 ();
+ sg13cmos5l_fill_1 FILLER_10_151 ();
+ sg13cmos5l_decap_8 FILLER_10_160 ();
+ sg13cmos5l_fill_1 FILLER_10_167 ();
  sg13cmos5l_decap_8 FILLER_10_21 ();
  sg13cmos5l_decap_8 FILLER_10_28 ();
  sg13cmos5l_decap_8 FILLER_10_35 ();
@@ -95,18 +113,18 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_10_70 ();
  sg13cmos5l_decap_8 FILLER_10_77 ();
  sg13cmos5l_decap_8 FILLER_10_84 ();
- sg13cmos5l_decap_8 FILLER_10_91 ();
- sg13cmos5l_decap_8 FILLER_10_98 ();
+ sg13cmos5l_decap_4 FILLER_10_91 ();
  sg13cmos5l_decap_8 FILLER_11_0 ();
  sg13cmos5l_decap_8 FILLER_11_105 ();
- sg13cmos5l_decap_8 FILLER_11_112 ();
- sg13cmos5l_decap_8 FILLER_11_128 ();
- sg13cmos5l_fill_2 FILLER_11_135 ();
+ sg13cmos5l_fill_2 FILLER_11_112 ();
+ sg13cmos5l_decap_4 FILLER_11_117 ();
+ sg13cmos5l_fill_2 FILLER_11_121 ();
  sg13cmos5l_decap_8 FILLER_11_14 ();
- sg13cmos5l_decap_4 FILLER_11_145 ();
- sg13cmos5l_fill_1 FILLER_11_149 ();
- sg13cmos5l_decap_8 FILLER_11_159 ();
- sg13cmos5l_fill_2 FILLER_11_166 ();
+ sg13cmos5l_decap_8 FILLER_11_141 ();
+ sg13cmos5l_decap_8 FILLER_11_148 ();
+ sg13cmos5l_fill_1 FILLER_11_155 ();
+ sg13cmos5l_decap_8 FILLER_11_160 ();
+ sg13cmos5l_fill_1 FILLER_11_167 ();
  sg13cmos5l_decap_8 FILLER_11_21 ();
  sg13cmos5l_decap_8 FILLER_11_28 ();
  sg13cmos5l_decap_8 FILLER_11_35 ();
@@ -123,8 +141,8 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_12_0 ();
  sg13cmos5l_decap_8 FILLER_12_105 ();
  sg13cmos5l_decap_8 FILLER_12_112 ();
- sg13cmos5l_decap_8 FILLER_12_119 ();
- sg13cmos5l_decap_8 FILLER_12_126 ();
+ sg13cmos5l_decap_4 FILLER_12_119 ();
+ sg13cmos5l_fill_2 FILLER_12_123 ();
  sg13cmos5l_decap_8 FILLER_12_133 ();
  sg13cmos5l_decap_8 FILLER_12_14 ();
  sg13cmos5l_decap_8 FILLER_12_140 ();
@@ -154,8 +172,9 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_13_14 ();
  sg13cmos5l_decap_8 FILLER_13_140 ();
  sg13cmos5l_decap_8 FILLER_13_147 ();
- sg13cmos5l_decap_8 FILLER_13_154 ();
- sg13cmos5l_decap_8 FILLER_13_161 ();
+ sg13cmos5l_fill_2 FILLER_13_154 ();
+ sg13cmos5l_decap_8 FILLER_13_160 ();
+ sg13cmos5l_fill_1 FILLER_13_167 ();
  sg13cmos5l_decap_8 FILLER_13_21 ();
  sg13cmos5l_decap_8 FILLER_13_28 ();
  sg13cmos5l_decap_8 FILLER_13_35 ();
@@ -178,8 +197,9 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_14_14 ();
  sg13cmos5l_decap_8 FILLER_14_140 ();
  sg13cmos5l_decap_8 FILLER_14_147 ();
- sg13cmos5l_decap_8 FILLER_14_154 ();
- sg13cmos5l_decap_8 FILLER_14_161 ();
+ sg13cmos5l_fill_2 FILLER_14_154 ();
+ sg13cmos5l_decap_8 FILLER_14_160 ();
+ sg13cmos5l_fill_1 FILLER_14_167 ();
  sg13cmos5l_decap_8 FILLER_14_21 ();
  sg13cmos5l_decap_8 FILLER_14_28 ();
  sg13cmos5l_decap_8 FILLER_14_35 ();
@@ -201,9 +221,10 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_15_133 ();
  sg13cmos5l_decap_8 FILLER_15_14 ();
  sg13cmos5l_decap_8 FILLER_15_140 ();
- sg13cmos5l_decap_8 FILLER_15_147 ();
- sg13cmos5l_decap_8 FILLER_15_154 ();
- sg13cmos5l_decap_8 FILLER_15_161 ();
+ sg13cmos5l_decap_4 FILLER_15_147 ();
+ sg13cmos5l_fill_1 FILLER_15_151 ();
+ sg13cmos5l_decap_8 FILLER_15_160 ();
+ sg13cmos5l_fill_1 FILLER_15_167 ();
  sg13cmos5l_decap_8 FILLER_15_21 ();
  sg13cmos5l_decap_8 FILLER_15_28 ();
  sg13cmos5l_decap_8 FILLER_15_35 ();
@@ -218,12 +239,13 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_15_91 ();
  sg13cmos5l_decap_8 FILLER_15_98 ();
  sg13cmos5l_decap_8 FILLER_1_0 ();
- sg13cmos5l_decap_4 FILLER_1_105 ();
+ sg13cmos5l_fill_2 FILLER_1_105 ();
+ sg13cmos5l_fill_1 FILLER_1_107 ();
+ sg13cmos5l_decap_8 FILLER_1_139 ();
  sg13cmos5l_decap_8 FILLER_1_14 ();
- sg13cmos5l_fill_2 FILLER_1_140 ();
- sg13cmos5l_fill_1 FILLER_1_142 ();
- sg13cmos5l_decap_8 FILLER_1_158 ();
- sg13cmos5l_fill_2 FILLER_1_165 ();
+ sg13cmos5l_decap_4 FILLER_1_146 ();
+ sg13cmos5l_fill_2 FILLER_1_150 ();
+ sg13cmos5l_decap_8 FILLER_1_160 ();
  sg13cmos5l_fill_1 FILLER_1_167 ();
  sg13cmos5l_decap_8 FILLER_1_21 ();
  sg13cmos5l_decap_8 FILLER_1_28 ();
@@ -240,8 +262,8 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_1_98 ();
  sg13cmos5l_decap_8 FILLER_2_0 ();
  sg13cmos5l_decap_8 FILLER_2_14 ();
- sg13cmos5l_decap_8 FILLER_2_157 ();
- sg13cmos5l_decap_4 FILLER_2_164 ();
+ sg13cmos5l_decap_8 FILLER_2_160 ();
+ sg13cmos5l_fill_1 FILLER_2_167 ();
  sg13cmos5l_decap_8 FILLER_2_21 ();
  sg13cmos5l_decap_8 FILLER_2_28 ();
  sg13cmos5l_decap_8 FILLER_2_35 ();
@@ -254,8 +276,10 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_2_77 ();
  sg13cmos5l_decap_8 FILLER_2_84 ();
  sg13cmos5l_decap_8 FILLER_2_91 ();
- sg13cmos5l_decap_4 FILLER_2_98 ();
  sg13cmos5l_decap_8 FILLER_3_0 ();
+ sg13cmos5l_decap_4 FILLER_3_106 ();
+ sg13cmos5l_fill_1 FILLER_3_110 ();
+ sg13cmos5l_fill_1 FILLER_3_129 ();
  sg13cmos5l_decap_8 FILLER_3_14 ();
  sg13cmos5l_decap_8 FILLER_3_157 ();
  sg13cmos5l_decap_4 FILLER_3_164 ();
@@ -269,14 +293,14 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_3_7 ();
  sg13cmos5l_decap_8 FILLER_3_70 ();
  sg13cmos5l_decap_8 FILLER_3_77 ();
- sg13cmos5l_decap_8 FILLER_3_84 ();
- sg13cmos5l_fill_2 FILLER_3_91 ();
+ sg13cmos5l_decap_4 FILLER_3_84 ();
+ sg13cmos5l_fill_1 FILLER_3_88 ();
  sg13cmos5l_decap_8 FILLER_4_0 ();
- sg13cmos5l_fill_2 FILLER_4_127 ();
- sg13cmos5l_fill_1 FILLER_4_129 ();
+ sg13cmos5l_fill_2 FILLER_4_135 ();
  sg13cmos5l_decap_8 FILLER_4_14 ();
- sg13cmos5l_decap_8 FILLER_4_159 ();
- sg13cmos5l_fill_2 FILLER_4_166 ();
+ sg13cmos5l_decap_8 FILLER_4_158 ();
+ sg13cmos5l_fill_2 FILLER_4_165 ();
+ sg13cmos5l_fill_1 FILLER_4_167 ();
  sg13cmos5l_decap_8 FILLER_4_21 ();
  sg13cmos5l_decap_8 FILLER_4_28 ();
  sg13cmos5l_decap_8 FILLER_4_35 ();
@@ -288,12 +312,13 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_4_70 ();
  sg13cmos5l_decap_8 FILLER_4_77 ();
  sg13cmos5l_decap_8 FILLER_4_84 ();
- sg13cmos5l_decap_4 FILLER_4_91 ();
- sg13cmos5l_fill_1 FILLER_4_95 ();
+ sg13cmos5l_fill_2 FILLER_4_91 ();
+ sg13cmos5l_fill_1 FILLER_4_93 ();
  sg13cmos5l_decap_8 FILLER_5_0 ();
- sg13cmos5l_fill_2 FILLER_5_126 ();
- sg13cmos5l_fill_1 FILLER_5_128 ();
+ sg13cmos5l_fill_2 FILLER_5_118 ();
+ sg13cmos5l_fill_1 FILLER_5_120 ();
  sg13cmos5l_decap_8 FILLER_5_14 ();
+ sg13cmos5l_fill_2 FILLER_5_148 ();
  sg13cmos5l_decap_8 FILLER_5_160 ();
  sg13cmos5l_fill_1 FILLER_5_167 ();
  sg13cmos5l_decap_8 FILLER_5_21 ();
@@ -307,12 +332,15 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_5_70 ();
  sg13cmos5l_decap_8 FILLER_5_77 ();
  sg13cmos5l_decap_8 FILLER_5_84 ();
+ sg13cmos5l_decap_8 FILLER_5_91 ();
+ sg13cmos5l_decap_8 FILLER_5_98 ();
  sg13cmos5l_decap_8 FILLER_6_0 ();
- sg13cmos5l_fill_2 FILLER_6_130 ();
- sg13cmos5l_fill_1 FILLER_6_132 ();
+ sg13cmos5l_decap_4 FILLER_6_109 ();
+ sg13cmos5l_fill_1 FILLER_6_113 ();
  sg13cmos5l_decap_8 FILLER_6_14 ();
- sg13cmos5l_decap_8 FILLER_6_157 ();
- sg13cmos5l_decap_4 FILLER_6_164 ();
+ sg13cmos5l_decap_8 FILLER_6_158 ();
+ sg13cmos5l_fill_2 FILLER_6_165 ();
+ sg13cmos5l_fill_1 FILLER_6_167 ();
  sg13cmos5l_decap_8 FILLER_6_21 ();
  sg13cmos5l_decap_8 FILLER_6_28 ();
  sg13cmos5l_decap_8 FILLER_6_35 ();
@@ -323,12 +351,14 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_6_7 ();
  sg13cmos5l_decap_8 FILLER_6_70 ();
  sg13cmos5l_decap_8 FILLER_6_77 ();
- sg13cmos5l_decap_4 FILLER_6_84 ();
- sg13cmos5l_fill_2 FILLER_6_88 ();
+ sg13cmos5l_decap_8 FILLER_6_84 ();
+ sg13cmos5l_decap_8 FILLER_6_91 ();
+ sg13cmos5l_fill_2 FILLER_6_98 ();
  sg13cmos5l_decap_8 FILLER_7_0 ();
- sg13cmos5l_fill_2 FILLER_7_107 ();
- sg13cmos5l_fill_1 FILLER_7_118 ();
+ sg13cmos5l_fill_2 FILLER_7_125 ();
+ sg13cmos5l_fill_1 FILLER_7_127 ();
  sg13cmos5l_decap_8 FILLER_7_14 ();
+ sg13cmos5l_fill_1 FILLER_7_141 ();
  sg13cmos5l_decap_8 FILLER_7_157 ();
  sg13cmos5l_decap_4 FILLER_7_164 ();
  sg13cmos5l_decap_8 FILLER_7_21 ();
@@ -340,10 +370,11 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_7_63 ();
  sg13cmos5l_decap_8 FILLER_7_7 ();
  sg13cmos5l_decap_8 FILLER_7_70 ();
- sg13cmos5l_decap_8 FILLER_7_77 ();
- sg13cmos5l_decap_4 FILLER_7_84 ();
- sg13cmos5l_fill_1 FILLER_7_88 ();
+ sg13cmos5l_decap_4 FILLER_7_77 ();
+ sg13cmos5l_fill_1 FILLER_7_81 ();
  sg13cmos5l_decap_8 FILLER_8_0 ();
+ sg13cmos5l_fill_2 FILLER_8_116 ();
+ sg13cmos5l_fill_1 FILLER_8_124 ();
  sg13cmos5l_decap_8 FILLER_8_14 ();
  sg13cmos5l_decap_8 FILLER_8_160 ();
  sg13cmos5l_fill_1 FILLER_8_167 ();
@@ -356,13 +387,11 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_8_63 ();
  sg13cmos5l_decap_8 FILLER_8_7 ();
  sg13cmos5l_decap_8 FILLER_8_70 ();
- sg13cmos5l_decap_8 FILLER_8_77 ();
- sg13cmos5l_decap_4 FILLER_8_84 ();
- sg13cmos5l_fill_2 FILLER_8_88 ();
+ sg13cmos5l_decap_4 FILLER_8_77 ();
  sg13cmos5l_decap_8 FILLER_9_0 ();
- sg13cmos5l_fill_1 FILLER_9_135 ();
+ sg13cmos5l_fill_2 FILLER_9_109 ();
+ sg13cmos5l_fill_1 FILLER_9_111 ();
  sg13cmos5l_decap_8 FILLER_9_14 ();
- sg13cmos5l_fill_2 FILLER_9_145 ();
  sg13cmos5l_decap_8 FILLER_9_157 ();
  sg13cmos5l_decap_4 FILLER_9_164 ();
  sg13cmos5l_decap_8 FILLER_9_21 ();
@@ -375,127 +404,138 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_decap_8 FILLER_9_7 ();
  sg13cmos5l_decap_8 FILLER_9_70 ();
  sg13cmos5l_decap_8 FILLER_9_77 ();
- sg13cmos5l_decap_8 FILLER_9_84 ();
- sg13cmos5l_decap_8 FILLER_9_91 ();
+ sg13cmos5l_fill_1 FILLER_9_84 ();
  sg13cmos5l_fill_2 FILLER_9_98 ();
- sg13cmos5l_xor2_1 _16_ (.B(net16),
-    .A(net23),
+ sg13cmos5l_xor2_1 _20_ (.B(net25),
+    .A(net30),
     .X(_01_));
- sg13cmos5l_nand2_1 _17_ (.Y(_08_),
+ sg13cmos5l_nand2_1 _21_ (.Y(_08_),
     .A(\cnt[1] ),
-    .B(net16));
- sg13cmos5l_xnor2_1 _18_ (.Y(_02_),
-    .A(net17),
+    .B(net25));
+ sg13cmos5l_xnor2_1 _22_ (.Y(_02_),
+    .A(net26),
     .B(_08_));
- sg13cmos5l_nand3_1 _19_ (.B(\cnt[0] ),
+ sg13cmos5l_nand3_1 _23_ (.B(\cnt[0] ),
     .C(\cnt[2] ),
     .A(\cnt[1] ),
     .Y(_09_));
- sg13cmos5l_xnor2_1 _20_ (.Y(_03_),
-    .A(net12),
-    .B(_09_));
- sg13cmos5l_and4_2 _21_ (.A(\cnt[1] ),
-    .B(net16),
-    .C(net17),
-    .D(net12),
-    .X(_10_));
- sg13cmos5l_xor2_1 _22_ (.B(_10_),
+ sg13cmos5l_xnor2_1 _24_ (.Y(_03_),
     .A(net21),
+    .B(_09_));
+ sg13cmos5l_and4_2 _25_ (.A(net30),
+    .B(net25),
+    .C(net26),
+    .D(net21),
+    .X(_10_));
+ sg13cmos5l_xor2_1 _26_ (.B(_10_),
+    .A(net31),
     .X(_04_));
- sg13cmos5l_nand2_1 _23_ (.Y(_11_),
+ sg13cmos5l_nand2_1 _27_ (.Y(_11_),
     .A(\cnt[4] ),
     .B(_10_));
- sg13cmos5l_xnor2_1 _24_ (.Y(_05_),
-    .A(net19),
+ sg13cmos5l_xnor2_1 _28_ (.Y(_05_),
+    .A(net28),
     .B(_11_));
- sg13cmos5l_nand3_1 _25_ (.B(\cnt[5] ),
+ sg13cmos5l_nand3_1 _29_ (.B(\cnt[5] ),
     .C(_10_),
     .A(\cnt[4] ),
     .Y(_12_));
- sg13cmos5l_xnor2_1 _26_ (.Y(_06_),
-    .A(net14),
+ sg13cmos5l_xnor2_1 _30_ (.Y(_06_),
+    .A(net23),
     .B(_12_));
- sg13cmos5l_nand4_1 _27_ (.B(\cnt[5] ),
+ sg13cmos5l_nand4_1 _31_ (.B(\cnt[5] ),
     .C(\cnt[6] ),
     .A(\cnt[4] ),
     .Y(_13_),
     .D(_10_));
- sg13cmos5l_xnor2_1 _28_ (.Y(_07_),
-    .A(net10),
+ sg13cmos5l_xnor2_1 _32_ (.Y(_07_),
+    .A(net19),
     .B(_13_));
- sg13cmos5l_buf_1 _29_ (.A(net1),
+ sg13cmos5l_buf_1 _33_ (.A(net1),
     .X(_14_));
- sg13cmos5l_mux2_2 _30_ (.A0(net2),
+ sg13cmos5l_mux2_2 _34_ (.A0(net2),
     .A1(\cnt[0] ),
-    .S(_14_),
+    .S(net10),
     .X(uo_out[0]));
- sg13cmos5l_mux2_1 _31_ (.A0(net3),
-    .A1(\cnt[1] ),
-    .S(_14_),
-    .X(uo_out[1]));
- sg13cmos5l_mux2_1 _32_ (.A0(net4),
+ sg13cmos5l_nor2b_1 _35_ (.A(net10),
+    .B_N(net3),
+    .Y(_15_));
+ sg13cmos5l_a21oi_1 _36_ (.A1(\cnt[1] ),
+    .A2(net10),
+    .Y(uo_out[1]),
+    .B1(_15_));
+ sg13cmos5l_mux2_1 _37_ (.A0(net4),
     .A1(\cnt[2] ),
-    .S(_14_),
+    .S(net10),
     .X(uo_out[2]));
- sg13cmos5l_mux2_1 _33_ (.A0(net5),
-    .A1(\cnt[3] ),
-    .S(_14_),
-    .X(uo_out[3]));
- sg13cmos5l_mux2_1 _34_ (.A0(net6),
-    .A1(\cnt[4] ),
-    .S(_14_),
-    .X(uo_out[4]));
- sg13cmos5l_mux2_1 _35_ (.A0(net7),
+ sg13cmos5l_nor2b_1 _38_ (.A(net10),
+    .B_N(net5),
+    .Y(_16_));
+ sg13cmos5l_a21oi_1 _39_ (.A1(\cnt[3] ),
+    .A2(net10),
+    .Y(uo_out[3]),
+    .B1(_16_));
+ sg13cmos5l_nor2b_1 _40_ (.A(net10),
+    .B_N(net6),
+    .Y(_17_));
+ sg13cmos5l_a21oi_1 _41_ (.A1(\cnt[4] ),
+    .A2(net10),
+    .Y(uo_out[4]),
+    .B1(_17_));
+ sg13cmos5l_mux2_1 _42_ (.A0(net7),
     .A1(\cnt[5] ),
-    .S(_14_),
+    .S(net1),
     .X(uo_out[5]));
- sg13cmos5l_mux2_1 _36_ (.A0(net8),
-    .A1(\cnt[6] ),
-    .S(_14_),
-    .X(uo_out[6]));
- sg13cmos5l_mux2_1 _37_ (.A0(net9),
+ sg13cmos5l_nor2b_1 _43_ (.A(_14_),
+    .B_N(net8),
+    .Y(_18_));
+ sg13cmos5l_a21oi_1 _44_ (.A1(\cnt[6] ),
+    .A2(_14_),
+    .Y(uo_out[6]),
+    .B1(_18_));
+ sg13cmos5l_mux2_1 _45_ (.A0(net9),
     .A1(\cnt[7] ),
-    .S(_14_),
+    .S(net1),
     .X(uo_out[7]));
- sg13cmos5l_inv_1 _38_ (.Y(_00_),
-    .A(net16));
- sg13cmos5l_dfrbpq_1 _39_ (.RESET_B(net24),
+ sg13cmos5l_inv_1 _46_ (.Y(_00_),
+    .A(net25));
+ sg13cmos5l_dfrbpq_1 _47_ (.RESET_B(net32),
     .D(_00_),
     .Q(\cnt[0] ),
     .CLK(clknet_1_0__leaf_clk));
- sg13cmos5l_dfrbpq_1 _40_ (.RESET_B(net24),
+ sg13cmos5l_dfrbpq_1 _48_ (.RESET_B(net32),
     .D(_01_),
     .Q(\cnt[1] ),
     .CLK(clknet_1_0__leaf_clk));
- sg13cmos5l_dfrbpq_1 _41_ (.RESET_B(net24),
-    .D(net18),
+ sg13cmos5l_dfrbpq_1 _49_ (.RESET_B(net32),
+    .D(net27),
     .Q(\cnt[2] ),
     .CLK(clknet_1_0__leaf_clk));
- sg13cmos5l_dfrbpq_1 _42_ (.RESET_B(net24),
-    .D(net13),
+ sg13cmos5l_dfrbpq_1 _50_ (.RESET_B(net32),
+    .D(net22),
     .Q(\cnt[3] ),
     .CLK(clknet_1_0__leaf_clk));
- sg13cmos5l_dfrbpq_1 _43_ (.RESET_B(net24),
-    .D(net22),
+ sg13cmos5l_dfrbpq_1 _51_ (.RESET_B(net32),
+    .D(_04_),
     .Q(\cnt[4] ),
     .CLK(clknet_1_1__leaf_clk));
- sg13cmos5l_dfrbpq_1 _44_ (.RESET_B(net24),
-    .D(net20),
+ sg13cmos5l_dfrbpq_1 _52_ (.RESET_B(net32),
+    .D(net29),
     .Q(\cnt[5] ),
     .CLK(clknet_1_1__leaf_clk));
- sg13cmos5l_dfrbpq_1 _45_ (.RESET_B(net24),
-    .D(net15),
+ sg13cmos5l_dfrbpq_1 _53_ (.RESET_B(net32),
+    .D(net24),
     .Q(\cnt[6] ),
     .CLK(clknet_1_1__leaf_clk));
- sg13cmos5l_dfrbpq_1 _46_ (.RESET_B(net24),
-    .D(net11),
+ sg13cmos5l_dfrbpq_1 _54_ (.RESET_B(net32),
+    .D(net20),
     .Q(\cnt[7] ),
     .CLK(clknet_1_1__leaf_clk));
- sg13cmos5l_dfrbpq_1 _47_ (.RESET_B(net1),
-    .D(net),
+ sg13cmos5l_dfrbpq_1 _55_ (.RESET_B(net1),
+    .D(net18),
     .Q(rst_n_i),
     .CLK(clknet_1_0__leaf_clk));
- sg13cmos5l_tiehi _47__10 (.L_HI(net));
+ sg13cmos5l_tiehi _55__18 (.L_HI(net18));
  sg13cmos5l_buf_16 clkbuf_0_clk (.X(clknet_0_clk),
     .A(clk));
  sg13cmos5l_buf_16 clkbuf_1_0__f_clk (.X(clknet_1_0__leaf_clk),
@@ -503,36 +543,36 @@ module tt_um_micro_proj2 (clk,
  sg13cmos5l_buf_16 clkbuf_1_1__f_clk (.X(clknet_1_1__leaf_clk),
     .A(clknet_0_clk));
  sg13cmos5l_inv_1 clkload0 (.A(clknet_1_1__leaf_clk));
- sg13cmos5l_dlygate4sd3_1 hold11 (.A(\cnt[7] ),
+ sg13cmos5l_buf_1 fanout10 (.A(_14_),
     .X(net10));
- sg13cmos5l_dlygate4sd3_1 hold12 (.A(_07_),
-    .X(net11));
- sg13cmos5l_dlygate4sd3_1 hold13 (.A(\cnt[3] ),
-    .X(net12));
- sg13cmos5l_dlygate4sd3_1 hold14 (.A(_03_),
-    .X(net13));
- sg13cmos5l_dlygate4sd3_1 hold15 (.A(\cnt[6] ),
-    .X(net14));
- sg13cmos5l_dlygate4sd3_1 hold16 (.A(_06_),
-    .X(net15));
- sg13cmos5l_dlygate4sd3_1 hold17 (.A(\cnt[0] ),
-    .X(net16));
- sg13cmos5l_dlygate4sd3_1 hold18 (.A(\cnt[2] ),
-    .X(net17));
- sg13cmos5l_dlygate4sd3_1 hold19 (.A(_02_),
-    .X(net18));
- sg13cmos5l_dlygate4sd3_1 hold20 (.A(\cnt[5] ),
+ sg13cmos5l_dlygate4sd3_1 hold19 (.A(\cnt[7] ),
     .X(net19));
- sg13cmos5l_dlygate4sd3_1 hold21 (.A(_05_),
+ sg13cmos5l_dlygate4sd3_1 hold20 (.A(_07_),
     .X(net20));
- sg13cmos5l_dlygate4sd3_1 hold22 (.A(\cnt[4] ),
+ sg13cmos5l_dlygate4sd3_1 hold21 (.A(\cnt[3] ),
     .X(net21));
- sg13cmos5l_dlygate4sd3_1 hold23 (.A(_04_),
+ sg13cmos5l_dlygate4sd3_1 hold22 (.A(_03_),
     .X(net22));
- sg13cmos5l_dlygate4sd3_1 hold24 (.A(\cnt[1] ),
+ sg13cmos5l_dlygate4sd3_1 hold23 (.A(\cnt[6] ),
     .X(net23));
- sg13cmos5l_dlygate4sd3_1 hold25 (.A(rst_n_i),
+ sg13cmos5l_dlygate4sd3_1 hold24 (.A(_06_),
     .X(net24));
+ sg13cmos5l_dlygate4sd3_1 hold25 (.A(\cnt[0] ),
+    .X(net25));
+ sg13cmos5l_dlygate4sd3_1 hold26 (.A(\cnt[2] ),
+    .X(net26));
+ sg13cmos5l_dlygate4sd3_1 hold27 (.A(_02_),
+    .X(net27));
+ sg13cmos5l_dlygate4sd3_1 hold28 (.A(\cnt[5] ),
+    .X(net28));
+ sg13cmos5l_dlygate4sd3_1 hold29 (.A(_05_),
+    .X(net29));
+ sg13cmos5l_dlygate4sd3_1 hold30 (.A(\cnt[1] ),
+    .X(net30));
+ sg13cmos5l_dlygate4sd3_1 hold31 (.A(\cnt[4] ),
+    .X(net31));
+ sg13cmos5l_dlygate4sd3_1 hold32 (.A(rst_n_i),
+    .X(net32));
  sg13cmos5l_buf_1 input1 (.A(rst_n),
     .X(net1));
  sg13cmos5l_buf_1 input2 (.A(ui_in[0]),
@@ -551,4 +591,20 @@ module tt_um_micro_proj2 (clk,
     .X(net8));
  sg13cmos5l_buf_1 input9 (.A(ui_in[7]),
     .X(net9));
+ sg13cmos5l_tielo tt_um_micro_c5r4_d0b (.L_LO(net));
+ sg13cmos5l_tielo tt_um_micro_c5r4_d0b_11 (.L_LO(net11));
+ sg13cmos5l_tielo tt_um_micro_c5r4_d0b_12 (.L_LO(net12));
+ sg13cmos5l_tielo tt_um_micro_c5r4_d0b_13 (.L_LO(net13));
+ sg13cmos5l_tielo tt_um_micro_c5r4_d0b_14 (.L_LO(net14));
+ sg13cmos5l_tielo tt_um_micro_c5r4_d0b_15 (.L_LO(net15));
+ sg13cmos5l_tielo tt_um_micro_c5r4_d0b_16 (.L_LO(net16));
+ sg13cmos5l_tielo tt_um_micro_c5r4_d0b_17 (.L_LO(net17));
+ assign uio_oe[0] = net;
+ assign uio_oe[1] = net11;
+ assign uio_oe[2] = net12;
+ assign uio_oe[3] = net13;
+ assign uio_out[0] = net14;
+ assign uio_out[1] = net15;
+ assign uio_out[2] = net16;
+ assign uio_out[3] = net17;
 endmodule
