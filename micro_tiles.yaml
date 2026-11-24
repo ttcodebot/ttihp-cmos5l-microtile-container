@@ -1,0 +1,14 @@
+top_module: tt_um_micro_tiles_c5r2d0
+title: "Pin plan micro_r2, d0 container"
+connect_uio: false
+gate: [ui_in]
+config: {IGNORE_DISCONNECTED_MODULES: [tt_um_micro_c5r2_d0b, tt_um_micro_c5r2_d0a, tt_um_micro_c5r2_d0c, tt_um_micro_c5r2_d0d]}
+micro_tiles:
+  - repo: ttcodebot/ttihp-cmos5l-microtile   # c5r2-d0b
+    run: 45488305345
+  - repo: ttcodebot/ttihp-cmos5l-microtile   # c5r2-d0a
+    run: 45488303527
+  - repo: ttcodebot/ttihp-cmos5l-microtile   # c5r2-d0c
+    run: 45488304137
+  - repo: ttcodebot/ttihp-cmos5l-microtile   # c5r2-d0d
+    run: 45488308341
