@@ -13,6 +13,7 @@ Usage: python assemble_c5.py <spec.yaml>   (run from the root of the container r
     micro_tiles:             # in select order (uio_in[1:0] = 0, 1, 2, 3)
       - repo: owner/name     # a CI build: tt_submission + GDS_logs artifacts of gds run <run>
         run: 123456
+      - local: /path/to/project   # or a local build (runs/wokwi/final of that project dir)
 
 The container gives the selected micro tile clk, rst_n, ui_in and uio_in[N+1:2], and muxes its uo_out,
 uio_out and uio_oe to uo_out, uio_out[N+1:2] and uio_oe[N+1:2]. uio[1:0] stay inputs: they select.
@@ -43,16 +44,24 @@ shutil.rmtree(macros_dir, ignore_errors=True)
 entries = []
 for index, tile in enumerate(tiles):
     tmp = pathlib.Path(tempfile.mkdtemp())
-    for artifact in ("tt_submission", "GDS_logs"):
-        subprocess.run(
-            ["gh", "run", "download", str(tile["run"]), "-R", tile["repo"], "-n", artifact, "-D", str(tmp / artifact)],
-            check=True,
-        )
-    info = yaml.safe_load(open(tmp / "tt_submission" / "info.yaml"))
-    src_dir = tmp / "tt_submission" / "src"
+    if "local" in tile:  # a local build: info.yaml, src/ and runs/wokwi/final of that project dir
+        proj = pathlib.Path(tile["local"])
+        info = yaml.safe_load(open(proj / "info.yaml"))
+        src_dir = proj / "src"
+        final = proj / "runs" / "wokwi" / "final"
+        provenance = f"local {proj}"
+    else:
+        for artifact in ("tt_submission", "GDS_logs"):
+            subprocess.run(
+                ["gh", "run", "download", str(tile["run"]), "-R", tile["repo"], "-n", artifact, "-D", str(tmp / artifact)],
+                check=True,
+            )
+        info = yaml.safe_load(open(tmp / "tt_submission" / "info.yaml"))
+        src_dir = tmp / "tt_submission" / "src"
+        final = tmp / "GDS_logs" / "runs" / "wokwi" / "final"
+        provenance = f"{tile['repo']} run {tile['run']}"
     project = info["project"]
     macro = project["top_module"]
-    final = tmp / "GDS_logs" / "runs" / "wokwi" / "final"
     m = re.fullmatch(r"micro_r(\d)", project["tiles"])
     assert m, f"{macro}: tiles {project['tiles']} is not a pin plan micro tile"
     n = int(m.group(1))
@@ -76,7 +85,7 @@ for index, tile in enumerate(tiles):
             "k": k,
             "day0": day0,
             "sources": project["source_files"],
-            "from": f"{tile['repo']} run {tile['run']}",
+            "from": provenance,
         }
     )
     shutil.rmtree(tmp)
