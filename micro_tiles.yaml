@@ -1,0 +1,11 @@
+top_module: tt_um_micro_tiles_c5r2mix
+title: "Pin plan micro_r2, mix container"
+micro_tiles:
+  - repo: ttcodebot/ttihp-cmos5l-microtile   # c5r2-cnt
+    run: 45488303023
+  - repo: ttcodebot/ttihp-cmos5l-microtile   # c5r2-d0a
+    run: 45488303527
+  - repo: ttcodebot/ttihp-cmos5l-microtile   # c5r2-dense
+    run: 45488306445
+  - repo: ttcodebot/ttihp-cmos5l-microtile   # c5r2-d0b
+    run: 45488305345

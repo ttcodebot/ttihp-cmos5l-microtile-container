@@ -1,14 +1,20 @@
-module tt_um_micro_proj4 (clk,
+module tt_um_micro_c5r2_cnt (clk,
     rst_n,
     VPWR,
     VGND,
     ui_in,
+    uio_in,
+    uio_oe,
+    uio_out,
     uo_out);
  input clk;
  input rst_n;
  inout VPWR;
  inout VGND;
  input [7:0] ui_in;
+ input [1:0] uio_in;
+ output [1:0] uio_oe;
+ output [1:0] uio_out;
  output [7:0] uo_out;
 
  wire _00_;
@@ -66,11 +72,27 @@ module tt_um_micro_proj4 (clk,
 
  sg13cmos5l_decap_8 FILLER_0_0 (.VDD(VPWR),
     .VSS(VGND));
+ sg13cmos5l_decap_8 FILLER_0_105 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_decap_8 FILLER_0_112 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_decap_8 FILLER_0_119 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_2 FILLER_0_126 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_2 FILLER_0_132 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_1 FILLER_0_134 (.VDD(VPWR),
+    .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_0_14 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_0_157 (.VDD(VPWR),
+ sg13cmos5l_fill_2 FILLER_0_147 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_4 FILLER_0_164 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_0_158 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_2 FILLER_0_165 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_1 FILLER_0_167 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_0_21 (.VDD(VPWR),
     .VSS(VGND));
@@ -100,17 +122,15 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_10_0 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_10_105 (.VDD(VPWR),
+ sg13cmos5l_decap_4 FILLER_10_123 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_10_107 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_10_117 (.VDD(VPWR),
+ sg13cmos5l_fill_2 FILLER_10_127 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_10_14 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_10_157 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_10_160 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_4 FILLER_10_164 (.VDD(VPWR),
+ sg13cmos5l_fill_1 FILLER_10_167 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_10_21 (.VDD(VPWR),
     .VSS(VGND));
@@ -132,31 +152,17 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_10_77 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_10_84 (.VDD(VPWR),
+ sg13cmos5l_fill_2 FILLER_10_84 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_10_91 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_10_98 (.VDD(VPWR),
+ sg13cmos5l_fill_1 FILLER_10_86 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_11_0 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_11_105 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_11_112 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_11_128 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_11_135 (.VDD(VPWR),
-    .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_11_14 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_4 FILLER_11_145 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_11_160 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_11_149 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_11_159 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_11_166 (.VDD(VPWR),
+ sg13cmos5l_fill_1 FILLER_11_167 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_11_21 (.VDD(VPWR),
     .VSS(VGND));
@@ -180,33 +186,25 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_11_84 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_11_91 (.VDD(VPWR),
+ sg13cmos5l_fill_1 FILLER_11_91 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_11_98 (.VDD(VPWR),
+ sg13cmos5l_fill_2 FILLER_11_96 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_12_0 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_12_105 (.VDD(VPWR),
+ sg13cmos5l_fill_1 FILLER_12_100 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_12_112 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_12_122 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_12_119 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_12_129 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_12_126 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_12_133 (.VDD(VPWR),
+ sg13cmos5l_fill_2 FILLER_12_136 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_12_14 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_12_140 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_12_157 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_12_147 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_12_154 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_12_160 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_12_167 (.VDD(VPWR),
+ sg13cmos5l_decap_4 FILLER_12_164 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_12_21 (.VDD(VPWR),
     .VSS(VGND));
@@ -232,7 +230,7 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_12_91 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_12_98 (.VDD(VPWR),
+ sg13cmos5l_fill_2 FILLER_12_98 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_13_0 (.VDD(VPWR),
     .VSS(VGND));
@@ -250,11 +248,13 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_13_140 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_13_147 (.VDD(VPWR),
+ sg13cmos5l_decap_4 FILLER_13_147 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_13_154 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_13_155 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_13_161 (.VDD(VPWR),
+ sg13cmos5l_decap_4 FILLER_13_162 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_2 FILLER_13_166 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_13_21 (.VDD(VPWR),
     .VSS(VGND));
@@ -380,13 +380,15 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_1_0 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_4 FILLER_1_105 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_1_105 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_decap_8 FILLER_1_112 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_decap_4 FILLER_1_119 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_1 FILLER_1_123 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_1_14 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_1_140 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_1_142 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_1_158 (.VDD(VPWR),
     .VSS(VGND));
@@ -422,11 +424,17 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_2_0 (.VDD(VPWR),
     .VSS(VGND));
+ sg13cmos5l_decap_8 FILLER_2_105 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_2 FILLER_2_112 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_1 FILLER_2_123 (.VDD(VPWR),
+    .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_2_14 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_2_157 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_2_159 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_4 FILLER_2_164 (.VDD(VPWR),
+ sg13cmos5l_fill_2 FILLER_2_166 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_2_21 (.VDD(VPWR),
     .VSS(VGND));
@@ -452,15 +460,25 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_2_91 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_4 FILLER_2_98 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_2_98 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_3_0 (.VDD(VPWR),
     .VSS(VGND));
+ sg13cmos5l_fill_2 FILLER_3_128 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_1 FILLER_3_130 (.VDD(VPWR),
+    .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_3_14 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_3_157 (.VDD(VPWR),
+ sg13cmos5l_fill_2 FILLER_3_144 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_4 FILLER_3_164 (.VDD(VPWR),
+ sg13cmos5l_fill_1 FILLER_3_146 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_decap_8 FILLER_3_158 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_2 FILLER_3_165 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_1 FILLER_3_167 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_3_21 (.VDD(VPWR),
     .VSS(VGND));
@@ -484,19 +502,17 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_3_84 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_3_91 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_3_91 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_4_0 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_4_127 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_4_129 (.VDD(VPWR),
+ sg13cmos5l_decap_4 FILLER_4_124 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_4_14 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_4_159 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_4_157 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_4_166 (.VDD(VPWR),
+ sg13cmos5l_decap_4 FILLER_4_164 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_4_21 (.VDD(VPWR),
     .VSS(VGND));
@@ -522,17 +538,17 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_4 FILLER_4_91 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_4_95 (.VDD(VPWR),
+ sg13cmos5l_fill_2 FILLER_4_95 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_5_0 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_5_126 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_5_128 (.VDD(VPWR),
+ sg13cmos5l_fill_1 FILLER_5_125 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_5_14 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_5_160 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_5_158 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_2 FILLER_5_165 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_fill_1 FILLER_5_167 (.VDD(VPWR),
     .VSS(VGND));
@@ -556,19 +572,19 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_5_77 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_5_84 (.VDD(VPWR),
+ sg13cmos5l_decap_4 FILLER_5_84 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_2 FILLER_5_88 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_6_0 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_6_130 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_6_132 (.VDD(VPWR),
-    .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_6_14 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_6_157 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_6_158 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_4 FILLER_6_164 (.VDD(VPWR),
+ sg13cmos5l_fill_2 FILLER_6_165 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_1 FILLER_6_167 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_6_21 (.VDD(VPWR),
     .VSS(VGND));
@@ -592,13 +608,15 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_4 FILLER_6_84 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_6_88 (.VDD(VPWR),
+ sg13cmos5l_fill_1 FILLER_6_88 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_7_0 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_7_107 (.VDD(VPWR),
+ sg13cmos5l_fill_1 FILLER_7_100 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_7_118 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_7_113 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_decap_4 FILLER_7_120 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_7_14 (.VDD(VPWR),
     .VSS(VGND));
@@ -626,17 +644,25 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_7_77 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_4 FILLER_7_84 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_7_84 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_7_88 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_7_91 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_fill_2 FILLER_7_98 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_8_0 (.VDD(VPWR),
     .VSS(VGND));
+ sg13cmos5l_fill_1 FILLER_8_108 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_decap_4 FILLER_8_118 (.VDD(VPWR),
+    .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_8_14 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_8_160 (.VDD(VPWR),
+ sg13cmos5l_fill_2 FILLER_8_145 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_8_167 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_8_157 (.VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_decap_4 FILLER_8_164 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_8_21 (.VDD(VPWR),
     .VSS(VGND));
@@ -658,17 +684,11 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_8_77 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_4 FILLER_8_84 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_8_88 (.VDD(VPWR),
+ sg13cmos5l_decap_8 FILLER_8_84 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_9_0 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_fill_1 FILLER_9_135 (.VDD(VPWR),
-    .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_9_14 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_9_145 (.VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_9_157 (.VDD(VPWR),
     .VSS(VGND));
@@ -694,24 +714,18 @@ module tt_um_micro_proj4 (clk,
     .VSS(VGND));
  sg13cmos5l_decap_8 FILLER_9_77 (.VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_9_84 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_decap_8 FILLER_9_91 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_fill_2 FILLER_9_98 (.VDD(VPWR),
-    .VSS(VGND));
- sg13cmos5l_xor2_1 _16_ (.B(net16),
+ sg13cmos5l_xor2_1 _16_ (.B(net22),
     .A(net23),
     .X(_01_),
     .VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_nand2_1 _17_ (.Y(_08_),
     .A(\cnt[1] ),
-    .B(net16),
+    .B(\cnt[0] ),
     .VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_xnor2_1 _18_ (.Y(_02_),
-    .A(net17),
+    .A(net16),
     .B(_08_),
     .VDD(VPWR),
     .VSS(VGND));
@@ -727,14 +741,14 @@ module tt_um_micro_proj4 (clk,
     .VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_and4_2 _21_ (.A(\cnt[1] ),
-    .B(net16),
-    .C(net17),
+    .B(\cnt[0] ),
+    .C(net16),
     .D(net12),
     .X(_10_),
     .VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_xor2_1 _22_ (.B(_10_),
-    .A(net21),
+    .A(net20),
     .X(_04_),
     .VDD(VPWR),
     .VSS(VGND));
@@ -744,7 +758,7 @@ module tt_um_micro_proj4 (clk,
     .VDD(VPWR),
     .VSS(VGND));
  sg13cmos5l_xnor2_1 _24_ (.Y(_05_),
-    .A(net19),
+    .A(net18),
     .B(_11_),
     .VDD(VPWR),
     .VSS(VGND));
@@ -771,119 +785,139 @@ module tt_um_micro_proj4 (clk,
     .B(_13_),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_buf_1 _29_ (.A(net1),
+ sg13cmos5l_buf_2 _29_ (.A(net1),
     .X(_14_),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_mux2_2 _30_ (.A0(net2),
+ sg13cmos5l_mux2_2 _30_ (.A0(net8),
     .A1(\cnt[0] ),
     .S(_14_),
     .X(uo_out[0]),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_mux2_1 _31_ (.A0(net3),
+ sg13cmos5l_mux2_1 _31_ (.A0(net9),
     .A1(\cnt[1] ),
     .S(_14_),
     .X(uo_out[1]),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_mux2_1 _32_ (.A0(net4),
+ sg13cmos5l_mux2_1 _32_ (.A0(net2),
     .A1(\cnt[2] ),
     .S(_14_),
     .X(uo_out[2]),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_mux2_1 _33_ (.A0(net5),
+ sg13cmos5l_mux2_1 _33_ (.A0(net3),
     .A1(\cnt[3] ),
     .S(_14_),
     .X(uo_out[3]),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_mux2_1 _34_ (.A0(net6),
+ sg13cmos5l_mux2_1 _34_ (.A0(net4),
     .A1(\cnt[4] ),
     .S(_14_),
     .X(uo_out[4]),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_mux2_1 _35_ (.A0(net7),
+ sg13cmos5l_mux2_1 _35_ (.A0(net5),
     .A1(\cnt[5] ),
     .S(_14_),
     .X(uo_out[5]),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_mux2_1 _36_ (.A0(net8),
+ sg13cmos5l_mux2_1 _36_ (.A0(net6),
     .A1(\cnt[6] ),
     .S(_14_),
     .X(uo_out[6]),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_mux2_1 _37_ (.A0(net9),
+ sg13cmos5l_mux2_1 _37_ (.A0(net7),
     .A1(\cnt[7] ),
     .S(_14_),
     .X(uo_out[7]),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_inv_1 _38_ (.VDD(VPWR),
-    .Y(_00_),
-    .A(net16),
+ sg13cmos5l_mux2_2 _38_ (.A0(net6),
+    .A1(\cnt[0] ),
+    .S(_14_),
+    .X(uio_out[0]),
+    .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_dfrbpq_1 _39_ (.RESET_B(net24),
+ sg13cmos5l_mux2_1 _39_ (.A0(net7),
+    .A1(\cnt[1] ),
+    .S(_14_),
+    .X(uio_out[1]),
+    .VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_inv_1 _40_ (.VDD(VPWR),
+    .Y(_00_),
+    .A(net22),
+    .VSS(VGND));
+ sg13cmos5l_dfrbpq_1 _41_ (.RESET_B(net24),
     .VSS(VGND),
     .VDD(VPWR),
     .D(_00_),
     .Q(\cnt[0] ),
     .CLK(clknet_1_0__leaf_clk));
- sg13cmos5l_dfrbpq_1 _40_ (.RESET_B(net24),
+ sg13cmos5l_dfrbpq_1 _42_ (.RESET_B(net24),
     .VSS(VGND),
     .VDD(VPWR),
     .D(_01_),
     .Q(\cnt[1] ),
     .CLK(clknet_1_0__leaf_clk));
- sg13cmos5l_dfrbpq_1 _41_ (.RESET_B(net24),
+ sg13cmos5l_dfrbpq_1 _43_ (.RESET_B(net24),
     .VSS(VGND),
     .VDD(VPWR),
-    .D(net18),
+    .D(net17),
     .Q(\cnt[2] ),
     .CLK(clknet_1_0__leaf_clk));
- sg13cmos5l_dfrbpq_1 _42_ (.RESET_B(net24),
+ sg13cmos5l_dfrbpq_1 _44_ (.RESET_B(net24),
     .VSS(VGND),
     .VDD(VPWR),
     .D(net13),
     .Q(\cnt[3] ),
     .CLK(clknet_1_0__leaf_clk));
- sg13cmos5l_dfrbpq_1 _43_ (.RESET_B(net24),
+ sg13cmos5l_dfrbpq_1 _45_ (.RESET_B(net24),
     .VSS(VGND),
     .VDD(VPWR),
-    .D(net22),
+    .D(net21),
     .Q(\cnt[4] ),
     .CLK(clknet_1_1__leaf_clk));
- sg13cmos5l_dfrbpq_1 _44_ (.RESET_B(net24),
+ sg13cmos5l_dfrbpq_1 _46_ (.RESET_B(net24),
     .VSS(VGND),
     .VDD(VPWR),
-    .D(net20),
+    .D(net19),
     .Q(\cnt[5] ),
     .CLK(clknet_1_1__leaf_clk));
- sg13cmos5l_dfrbpq_1 _45_ (.RESET_B(net24),
+ sg13cmos5l_dfrbpq_1 _47_ (.RESET_B(net24),
     .VSS(VGND),
     .VDD(VPWR),
     .D(net15),
     .Q(\cnt[6] ),
     .CLK(clknet_1_1__leaf_clk));
- sg13cmos5l_dfrbpq_1 _46_ (.RESET_B(net24),
+ sg13cmos5l_dfrbpq_1 _48_ (.RESET_B(net24),
     .VSS(VGND),
     .VDD(VPWR),
     .D(net11),
     .Q(\cnt[7] ),
     .CLK(clknet_1_1__leaf_clk));
- sg13cmos5l_dfrbpq_1 _47_ (.RESET_B(net1),
+ sg13cmos5l_dfrbpq_1 _49_ (.RESET_B(net1),
     .VSS(VGND),
     .VDD(VPWR),
     .D(net),
     .Q(rst_n_i),
     .CLK(clknet_1_0__leaf_clk));
- sg13cmos5l_tiehi _47__10 (.VDD(VPWR),
+ sg13cmos5l_tiehi _49__10 (.VDD(VPWR),
     .VSS(VGND),
     .L_HI(net));
+ sg13cmos5l_buf_1 _51_ (.A(ui_in[0]),
+    .X(uio_oe[0]),
+    .VDD(VPWR),
+    .VSS(VGND));
+ sg13cmos5l_buf_1 _52_ (.A(ui_in[1]),
+    .X(uio_oe[1]),
+    .VDD(VPWR),
+    .VSS(VGND));
  sg13cmos5l_buf_16 clkbuf_0_clk (.X(clknet_0_clk),
     .A(clk),
     .VDD(VPWR),
@@ -923,31 +957,31 @@ module tt_um_micro_proj4 (clk,
     .VDD(VPWR),
     .VSS(VGND),
     .X(net15));
- sg13cmos5l_dlygate4sd3_1 hold17 (.A(\cnt[0] ),
+ sg13cmos5l_dlygate4sd3_1 hold17 (.A(\cnt[2] ),
     .VDD(VPWR),
     .VSS(VGND),
     .X(net16));
- sg13cmos5l_dlygate4sd3_1 hold18 (.A(\cnt[2] ),
+ sg13cmos5l_dlygate4sd3_1 hold18 (.A(_02_),
     .VDD(VPWR),
     .VSS(VGND),
     .X(net17));
- sg13cmos5l_dlygate4sd3_1 hold19 (.A(_02_),
+ sg13cmos5l_dlygate4sd3_1 hold19 (.A(\cnt[5] ),
     .VDD(VPWR),
     .VSS(VGND),
     .X(net18));
- sg13cmos5l_dlygate4sd3_1 hold20 (.A(\cnt[5] ),
+ sg13cmos5l_dlygate4sd3_1 hold20 (.A(_05_),
     .VDD(VPWR),
     .VSS(VGND),
     .X(net19));
- sg13cmos5l_dlygate4sd3_1 hold21 (.A(_05_),
+ sg13cmos5l_dlygate4sd3_1 hold21 (.A(\cnt[4] ),
     .VDD(VPWR),
     .VSS(VGND),
     .X(net20));
- sg13cmos5l_dlygate4sd3_1 hold22 (.A(\cnt[4] ),
+ sg13cmos5l_dlygate4sd3_1 hold22 (.A(_04_),
     .VDD(VPWR),
     .VSS(VGND),
     .X(net21));
- sg13cmos5l_dlygate4sd3_1 hold23 (.A(_04_),
+ sg13cmos5l_dlygate4sd3_1 hold23 (.A(\cnt[0] ),
     .VDD(VPWR),
     .VSS(VGND),
     .X(net22));
@@ -963,35 +997,35 @@ module tt_um_micro_proj4 (clk,
     .X(net1),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_buf_1 input2 (.A(ui_in[0]),
+ sg13cmos5l_buf_1 input2 (.A(ui_in[2]),
     .X(net2),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_buf_1 input3 (.A(ui_in[1]),
+ sg13cmos5l_buf_1 input3 (.A(ui_in[3]),
     .X(net3),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_buf_1 input4 (.A(ui_in[2]),
+ sg13cmos5l_buf_1 input4 (.A(ui_in[4]),
     .X(net4),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_buf_1 input5 (.A(ui_in[3]),
+ sg13cmos5l_buf_1 input5 (.A(ui_in[5]),
     .X(net5),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_buf_1 input6 (.A(ui_in[4]),
+ sg13cmos5l_buf_1 input6 (.A(ui_in[6]),
     .X(net6),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_buf_1 input7 (.A(ui_in[5]),
+ sg13cmos5l_buf_1 input7 (.A(ui_in[7]),
     .X(net7),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_buf_1 input8 (.A(ui_in[6]),
+ sg13cmos5l_buf_1 input8 (.A(uio_in[0]),
     .X(net8),
     .VDD(VPWR),
     .VSS(VGND));
- sg13cmos5l_buf_1 input9 (.A(ui_in[7]),
+ sg13cmos5l_buf_1 input9 (.A(uio_in[1]),
     .X(net9),
     .VDD(VPWR),
     .VSS(VGND));
