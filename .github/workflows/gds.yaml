@@ -18,7 +18,7 @@ jobs:
         with:
           pdk: ihp-sg13cmos5l
           tools-repo: ttcodebot/tt-support-tools
-          tools-ref: microtile-cmos5l
+          tools-ref: microtile-uio-cmos5l
 
       # LVS treats the micro tiles as black boxes, so check on the final GDS that the power
       # pins of the container really reach the standard cell rails of every micro tile
@@ -37,7 +37,7 @@ jobs:
         uses: TinyTapeout/tt-gds-action/precheck@ttihp27a
         with:
           tools-repo: ttcodebot/tt-support-tools
-          tools-ref: microtile-cmos5l
+          tools-ref: microtile-uio-cmos5l
 
   gl_test:
     needs: gds
